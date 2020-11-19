@@ -6,9 +6,12 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '/client/build')));
 
-mongoose.connect(`mongodb+srv://${process.env.user}:${process.env.password}@cluster0-tia6e.mongodb.net/NewWaveDB?retryWrites=true&w=majority`, { useNewUrlParser: true });
+mongoose.connect(`mongodb+srv://${process.env.user}:${process.env.password}@cluster0-tia6e.mongodb.net/usquizDB?retryWrites=true&w=majority`, { useNewUrlParser: true });
 const db = mongoose.connection;
 
+db.once('open', () => {
+  console.log('Connected to the database');
+});
 db.on('error', err => console.log('Error ' + err));
 
 const server = app.listen(process.env.PORT || 8000, () => {
