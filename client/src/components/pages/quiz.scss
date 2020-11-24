@@ -1,0 +1,14 @@
+@import '../../style/settings.scss';
+
+.answers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+
+    .ans-box {
+        flex: 0 0 50%;
+        border: solid 2px $color-dark;
+        min-width: 40vw;
+    }
+}
