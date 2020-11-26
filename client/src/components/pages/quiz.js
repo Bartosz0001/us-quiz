@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../config';
 
+import './quiz.scss';
+
 const Quiz = () => {
     const [question, setQuestion] = useState({});
     useEffect(() => {
@@ -18,13 +20,13 @@ const Quiz = () => {
 
     return (
         <div className='container'>
-          <div className='question'>{question.questionText}</div>
+          <div className='question'><h1 className='question-text'>{question.questionText}</h1></div>
           <div className='question-map'><img src={question.questionMap} alt='map' /></div>
           <div className='answers'>
-            <div className='ans-box'>{question.ans1}</div>
-            <div className='ans-box'>{question.ans2}</div>
-            <div className='ans-box'>{question.ans3}</div>
-            <div className='ans-box'>{question.ans4}</div>
+            <div className='ans-box'><button className='ans-btn'>{question.ans1}</button></div>
+            <div className='ans-box'><button className='ans-btn'>{question.ans2}</button></div>
+            <div className='ans-box'><button className='ans-btn'>{question.ans3}</button></div>
+            <div className='ans-box'><button className='ans-btn'>{question.ans4}</button></div>
           </div>
         </div>
     );  

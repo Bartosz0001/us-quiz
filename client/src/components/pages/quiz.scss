@@ -1,14 +1,52 @@
 @import '../../style/settings.scss';
 
+.question {
+    
+    .question-text {
+        font-size: $base-size*2;
+        text-align: center;
+        font-family: $font-text;
+    }  
+}
+
+.question-map {
+    width: 500px;
+    max-width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {  
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+    }
+}
+
 .answers {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 90vw;
+    margin-top: 10px;
 
     .ans-box {
-        flex: 0 0 50%;
+        flex: 0 0 47%;
         border: solid 2px $color-dark;
-        min-width: 40vw;
+        min-width: 300px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        .ans-btn {
+            cursor: pointer;
+            background-color: $second-color;
+            border: none;
+            font-size: $base-size*1.5;
+            padding: 0;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .ans-btn:hover {
+            background-color: $second-color-hover;
+        }
     }
 }
