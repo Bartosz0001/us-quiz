@@ -10,8 +10,8 @@
 }
 
 .question-map {
-    width: 500px;
-    max-width: 90vw;
+    width: 400px;
+    max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
 
@@ -48,5 +48,25 @@
         .ans-btn:hover {
             background-color: $second-color-hover;
         }
+    }
+}
+
+.timer {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: $color-clock;
+    border: dotted 3px $main-color;
+    padding: 10px;
+    border-radius: 50%;
+
+    .time {
+        line-height: 1.3;
+        font-size: $base-size*2;
+        color: $main-color;
+        font-family: $font-text;
+        margin: 0;
+        padding: 0;
     }
 }
