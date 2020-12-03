@@ -51,7 +51,7 @@ const Quiz = () => {
                 }
                 else {
                     checkIsWrong(true);
-                    const waitToRedirect = setTimeout(() => history.push('/results'), 1000);
+                    const waitToRedirect = setTimeout(() => history.push('/results', {count: reloads}), 1000);
                     return () => clearTimeout(waitToRedirect);
                 }
             }, 2000);
@@ -60,7 +60,7 @@ const Quiz = () => {
     }, [chosenAnswer]);
 
     useEffect(() => {
-        if(time === 0) history.push('results');
+        if(time === 0) history.push('/results', {count: reloads});
     }, [time]);
 
     return (
